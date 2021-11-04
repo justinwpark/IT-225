@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<h1>"Watch this! Click the button to see how web pages can be dynamically created."</h1>
+<style>
+table {
+  border-collapse: collapse;
+}
+table td, table th {
+  border: 1px solid black;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
+table tr td {
+	border-top: none;
+	padding: 10px;
+	text-align: center;
+}
+</style>
+</head>
+
+<table id="myTable">
+<form>
+	<select id="mySelect">
+	</select>
+</form>
+
+<button id="Button" onclick="myFunction()">Click Me</button>
+
+<script>
+function myFunction() {
+	var text;
+	var count = 0;	 
+	switch (count) {
+		case 0:
+		    var table = document.getElementById("myTable");
+		    var row1 = table.insertRow(0);
+		    var cell1 = row1.insertCell(0);
+		    var cell2 = row1.insertCell(1);
+		    var cell3 = row1.insertCell(2);
+		    cell1.innerHTML = "	";
+		    cell2.innerHTML = "	";
+		    cell3.innerHTML = "	";
+
+		    var row2 = table.insertRow(0);
+		    var cell4 = row2.insertCell(0);
+		    var cell5 = row2.insertCell(1);
+		    var cell6 = row2.insertCell(2);
+		    cell4.innerHTML = "	";
+		    cell5.innerHTML = "	";
+		    cell6.innerHTML = "	";
+
+		    var row3 = table.insertRow(0);
+		    var cell7 = row3.insertCell(0);
+		    var cell8 = row3.insertCell(1);
+		    var cell9 = row3.insertCell(2);
+		    cell7.innerHTML = "	";
+		    cell8.innerHTML = "	";
+		    cell9.innerHTML = "	";
+		    var count =1;
+		    break;
+
+		case 1:
+		   var x = document.getElementById("myTable").rows[0].cells;x[0].innerHTML = "X";
+		   var count =2;
+		   break;
+		case 2:
+		   var x = document.getElementById("myTable").rows[0].column[1].cells;x[0].innerHTML = "O";
+		   var count =3;
+		   break;
+		case 3:
+		   var x = document.getElementById("myTable").rows[0].column[2].cells;x[0].innerHTML = "X";
+		   var count =4;
+		case 4:
+		   var x = document.getElementById("myTable").rows[1].cells;x[0].innerHTML = "O";
+		   var count =5;
+		   break;
+		case 5:
+		   var x = document.getElementById("myTable").rows[1].column[1].cells;x[0].innerHTML = "X";
+		   var count =6;
+		   break;
+		case 6:
+		   var x = document.getElementById("myTable").rows[1].column[2].cells;x[0].innerHTML = "O";
+		   var count =7;
+		   break;
+		case 7:
+		   var x = document.getElementById("myTable").rows[2].cells;x[0].innerHTML = "X";
+		   var count =8;
+		   break;
+		case 8:
+		   var x = document.getElementById("myTable").rows[2].column[1].cells;x[0].innerHTML = "O";
+		   var count =9;
+		   break;
+		case 9:
+		   var x = document.getElementById("myTable").rows[2].column[2].cells;x[0].innerHTML = "X";
+		   var count =10;
+		   break;
+
+		case 10:
+			document.getElementById("myTable").delete;
+			var count =11;
+			break;
+
+		case 11: 
+			 var x = document.getElementById("mySelect");
+   			 var li = document.createElement("li");
+  		     li.text = "Red";
+   			 x.add(li);
+   			 var count =12;
+   			 break;
+   		case 12: 
+			 var x = document.getElementById("mySelect");
+   			 var li = document.createElement("li");
+  		     li.text = "Blue";
+  		     var count =13;
+   			 x.add(li);
+   			 break;
+   		case 13: 
+			 var x = document.getElementById("mySelect");
+   			 var li = document.createElement("li");
+  		     li.text = "Green";
+  		     var count =14;
+   			 x.add(li);
+   			 break;
+   		case 14:
+   			var x = document.getElementById("mySelect");
+   			var li = document.createElement("li");
+  		    li.text = "Green";
+  		    var count =15;
+   			x.add(li);
+   			break;
+   		case 15:
+   			alert("Oops! wrong order");
+   			var count =16;
+   			break;
+   		case 16:
+   			var list, i, switching, b, shouldSwitch;
+		    list = document.getElementById("id01");
+		    switching = true;
+		    while (switching) {
+		    switching = false;
+		    b = list.getElementsByTagName("LI");
+		    for (i = 0; i < (b.length - 1); i++) {
+		      shouldSwitch = false;
+		    if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+		        shouldSwitch = true;
+		        break;
+		      }
+		    }
+		    if (shouldSwitch) {
+		      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+		      switching = true;
+
+		    }
+		    }	
+		    var count =17;
+		    break;
+
+		    case 14:
+   			var x = document.getElementById("mySelect");
+   			var li = document.createElement("li");
+  		    li.text = "The End";
+  		    var count =15;
+   			x.add(li);
+   			break;
+
+			default: 
+				document.getElementById("Button").delete;
+				break;
+
+	}
+}
+</script>
+
+</body>
+</html>

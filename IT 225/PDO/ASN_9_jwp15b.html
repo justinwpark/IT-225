@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<h1>"Watch this! Click the button to see how web pages can be dynamically created."</h1>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+
+<button onclick="myFunction()">Click Me</button>
+
+<script>
+function myFunction() {
+	<table style="width:100%">
+  <tr>
+    <th></th>
+    <th></th> 
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode("Water");
+    node.appendChild(textnode);
+    document.getElementById("myList").appendChild(node);
+}
+</script>
+
+<p><strong>Note:</strong><br>First create an LI node,<br> then create a Text node,<br> then append the Text node to the LI node.<br>Finally append the LI node to the list.</p>
+
+</body>
+</html>
